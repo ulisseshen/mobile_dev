@@ -1,5 +1,1 @@
-banana
-maçã
-pera
-uva
-limão
+[banana, maçã, pera, uva, limão]
