@@ -15,8 +15,7 @@ void main() {
   // final splitted = string.split(' ');
   // print(splitted); // [Hello, world!];
   List<String> frutas = ['banana', 'maçã', 'pera', 'uva', 'limão'];
-  String json = jsonEncode(frutas);
-  escreverArquivoTexto("frutas.json", json);
+  escreverArquivoJson("frutas.json", frutas);
 
   String frutasTexto = lerArquivoTexto("frutas.txt");
   List<String> frutasSalvas = frutasTexto.split('\n');
@@ -32,4 +31,9 @@ String lerArquivoTexto(String arquivo) {
   File file = File(arquivo);
   String informacoes = file.readAsStringSync();
   return informacoes;
+}
+
+void escreverArquivoJson(String arquivo, Object json) {
+  String jsonString = jsonEncode(json);
+  escreverArquivoTexto(arquivo, jsonString);
 }
