@@ -41,7 +41,8 @@ void main() {
 
   print(jsonEncode(gu.toMap()));
 
-  String natanJson = jsonEncode(natan.toMap());
+  Map natanToMap = natan.toMap();
+  String natanJson = jsonEncode(natanToMap);
   print(natanJson);
 
   Map natanMap = jsonDecode(natanJson);
