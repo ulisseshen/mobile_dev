@@ -1,6 +1,8 @@
+import 'avatar_cabeca.dart';
+
 abstract class Avatar {
   final String body = "segurando xicara de café";
-  final String cabeca;
+  final AvatarCabeca cabeca;
   final String rosto;
   final bool bigode;
   final String oculos;
@@ -17,6 +19,6 @@ abstract class Avatar {
   @override
   String toString() {
     String temBigode = bigode ? "Sim" : "Não";
-    return " nome: $nome\n body: $body\n cabeça: $cabeca\n rosto: $rosto\n bigode: $temBigode\n óculos: $oculos";
+    return " nome: $nome\n body: $body\n cabeça: ${cabeca.name}\n rosto: $rosto\n bigode: $temBigode\n óculos: $oculos";
   }
 }

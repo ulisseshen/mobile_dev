@@ -1,10 +1,11 @@
 import 'avatar.dart';
+import 'avatar_cabeca.dart';
 
 class AnaBeatriz extends Avatar {
   AnaBeatriz()
       : super(
           nome: "Bia",
-          cabeca: "2",
+          cabeca: AvatarCabeca.longoLiso,
           rosto: "sorrindo",
           bigode: false,
           oculos: "grau",

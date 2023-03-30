@@ -1,9 +1,10 @@
 import 'avatar.dart';
+import 'avatar_cabeca.dart';
 
 class Gustavo extends Avatar {
   Gustavo()
       : super(
-          cabeca: "3",
+          cabeca: AvatarCabeca.topete,
           nome: "Gu estiloso",
           bigode: false,
           rosto: "sorrindo",
