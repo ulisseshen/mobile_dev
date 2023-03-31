@@ -6,6 +6,9 @@ class PessoaFeliz extends Pessoa {
   @override
   void printarNome() {
     print("meu nome é $nome, estou feliz");
-    super.printarNome();
+  }
+
+  void sorrir() {
+    print("$nome está sorrindo");
   }
 }

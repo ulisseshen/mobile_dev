@@ -6,6 +6,5 @@ class PessoaFelizEstudando extends PessoaFeliz {
   @override
   void printarNome() {
     print("meu nome é $nome, estou feliz e estou estudando");
-    super.printarNome();
   }
 }
