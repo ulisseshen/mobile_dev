@@ -29,8 +29,9 @@ void main() {
       continue;
     }
     //o "is" é utilizado como comparador de tipo
-    if (pessoa is PessoaFeliz) {
+    if (pessoa is PessoaFeliz && pessoa is PessoaFelizEstudando) {
       pessoa.sorrir();
+      pessoa.estudarAlegre();
     }
   }
 }

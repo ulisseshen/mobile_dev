@@ -7,4 +7,8 @@ class PessoaFelizEstudando extends PessoaFeliz {
   void printarNome() {
     print("meu nome é $nome, estou feliz e estou estudando");
   }
+
+  void estudarAlegre() {
+    print("Estou estudando CFC");
+  }
 }
