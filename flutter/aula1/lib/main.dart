@@ -1,83 +1,252 @@
 import 'package:flutter/material.dart';
 
 void main() {
+  final email = 'email5454@essssol.com';
   runApp(MaterialApp(
     title: "Aula 4",
     home: Scaffold(
-      body: Column(
-        children: [
-          SizedBox(
-            height: 30,
+      appBar: AppBar(
+        title: Center(child: Text('Aula 7')),
+        backgroundColor: Colors.blue,
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          onPressed: () {
+            print('Voltar');
+          },
+        ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.search),
+            tooltip: 'Search',
+            onPressed: () {
+              // handle the press
+            },
           ),
-          Container(
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          width: 10,
-                          height: 10,
-                          decoration: BoxDecoration(
-                            color: Colors.green,
-                            borderRadius: BorderRadius.all(Radius.circular(50)),
-                          ),
-                        ),
-                      ),
-                      width: 50,
-                      height: 50,
-                      margin: EdgeInsets.only(left: 10.0),
-                      decoration: BoxDecoration(
-                        color: Colors.red,
-                        borderRadius: BorderRadius.all(Radius.circular(50)),
-                      ),
-                    ),
-                  ],
+          IconButton(
+            icon: const Icon(Icons.settings),
+            tooltip: 'Settings',
+            onPressed: () {
+              // handle the press
+            },
+          ),
+        ],
+      ),
+      body: ListView(
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              decoration: InputDecoration(
+                suffixIcon: Icon(Icons.person),
+                label: Text('Nome'),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(40.0)),
                 ),
-                SizedBox(
-                  width: 15,
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 15.0, bottom: 10.0),
-                      child: Text(
-                        "Útilma mensagem",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                    Text(
-                      "dilma",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 15,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            width: 300,
-            height: 100,
-            decoration: BoxDecoration(
-              color: Colors.blueAccent,
-              borderRadius: BorderRadius.all(Radius.circular(15)),
-              border: Border.all(width: 5, color: Colors.red),
+              ),
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextFormField(
+              initialValue: email,
+              decoration: InputDecoration(
+                enabled: true,
+                suffixIcon: IconButton(
+                  icon: Icon(Icons.person),
+                  onPressed: () {},
+                ),
+                label: Text('Email'),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(40.0)),
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SizedBox(
+              width: double.infinity,
+              child: ElevatedButton.icon(
+                onPressed: () {},
+                label: Text('butão'),
+                icon: Icon(Icons.security),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: OutlinedButton(
+              onPressed: () {},
+              child: Text('butão'),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextButton(
+              onPressed: () {},
+              child: Text('butão'),
+            ),
+          ),
+          MensagemDilma(),
+          SizedBox(height: 20),
+          MensagemBolsonaro(),
+          SizedBox(height: 20),
+          MensagemDilma(),
+          SizedBox(height: 20),
+          MensagemBolsonaro(),
+          SizedBox(height: 20),
+          MensagemDilma(),
+          SizedBox(height: 20),
+          MensagemBolsonaro(),
+          SizedBox(height: 20),
+          MensagemDilma(),
+          SizedBox(height: 20),
+          MensagemBolsonaro(),
+          SizedBox(height: 20),
         ],
       ),
     ),
   ));
+}
+
+class MensagemBolsonaro extends StatelessWidget {
+  const MensagemBolsonaro({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      height: 100,
+      margin: EdgeInsets.symmetric(horizontal: 10.0),
+      decoration: BoxDecoration(
+        color: Colors.blueAccent,
+        borderRadius: BorderRadius.all(Radius.circular(15)),
+        border: Border.all(width: 5, color: Colors.red),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                width: 50,
+                height: 50,
+                margin: EdgeInsets.only(left: 10.0),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(Radius.circular(50)),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Icon(
+                    Icons.person_2_sharp,
+                    size: 30,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(
+            width: 15,
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Bolsonaro",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Text(
+                "Mensagem 321",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 15,
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class MensagemDilma extends StatelessWidget {
+  const MensagemDilma({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      height: 100,
+      margin: EdgeInsets.symmetric(horizontal: 10.0).copyWith(top: 10.0),
+      decoration: BoxDecoration(
+        color: Colors.blueAccent,
+        borderRadius: BorderRadius.all(Radius.circular(15)),
+        border: Border.all(width: 5, color: Colors.red),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                width: 50,
+                height: 50,
+                margin: EdgeInsets.only(left: 10.0),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(Radius.circular(50)),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Icon(
+                    Icons.person_2_sharp,
+                    size: 30,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(
+            width: 15,
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Dilma",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Text(
+                "Mensagem 123",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 15,
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
 }
