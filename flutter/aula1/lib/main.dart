@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 void main() {
   final email = 'email5454@essssol.com';
+
   runApp(MaterialApp(
-    title: "Aula 4",
+    title: 'Aula 4',
     home: Scaffold(
       appBar: AppBar(
         title: Center(child: Text('Aula 7')),
@@ -158,7 +159,7 @@ class MensagemBolsonaro extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Bolsonaro",
+                'Bolsonaro',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 18,
@@ -166,7 +167,7 @@ class MensagemBolsonaro extends StatelessWidget {
                 ),
               ),
               Text(
-                "Mensagem 321",
+                'Mensagem 321',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 15,
@@ -229,7 +230,7 @@ class MensagemDilma extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Dilma",
+                'Dilma',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 18,
@@ -237,7 +238,7 @@ class MensagemDilma extends StatelessWidget {
                 ),
               ),
               Text(
-                "Mensagem 123",
+                'Mensagem 123',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 15,
