@@ -54,7 +54,7 @@ void main() {
               decoration: InputDecoration(
                 enabled: true,
                 suffixIcon: IconButton(
-                  icon: Icon(Icons.person),
+                  icon: Icon(Icons.email),
                   onPressed: () {},
                 ),
                 label: Text('Email'),
@@ -66,11 +66,37 @@ void main() {
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
+            child: TextFormField(
+              initialValue: senha,
+              obscureText: true,
+              decoration: InputDecoration(
+                enabled: true,
+                suffixIcon: IconButton(
+                  icon: Icon(Icons.remove_red_eye),
+                  onPressed: () {},
+                ),
+                label: Text('Senha'),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(40.0)),
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
             child: SizedBox(
               width: double.infinity,
               child: ElevatedButton.icon(
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                      side: BorderSide(
+                        color: Colors.red,
+                      ),
+                      borderRadius: BorderRadius.circular(25.0)),
+                  backgroundColor: Colors.green,
+                ),
                 onPressed: () {},
-                label: Text('butão'),
+                label: Text('Entrar'),
                 icon: Icon(Icons.security),
               ),
             ),
@@ -85,6 +111,13 @@ void main() {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextButton(
+              style: TextButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  side: BorderSide(
+                    color: Colors.red,
+                  ),
+                ),
+              ),
               onPressed: () {},
               child: Text('butão'),
             ),
@@ -105,7 +138,6 @@ void main() {
           SizedBox(height: 20),
           MensagemBolsonaro(),
           SizedBox(height: 20),
-          Senha()
         ],
       ),
     ),
@@ -245,120 +277,6 @@ class MensagemDilma extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 15,
                 ),
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-//criar widget de senha statefull com manipulação de estado do obscureText e validção de senha com 6 caracteres
-class Senha extends StatefulWidget {
-  const Senha({
-    super.key,
-  });
-
-  @override
-  _SenhaState createState() => _SenhaState();
-}
-
-class _SenhaState extends State<Senha> {
-  bool obscureText = true;
-  String senha = '';
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height: 100,
-      margin: EdgeInsets.symmetric(horizontal: 10.0).copyWith(top: 10.0),
-      decoration: BoxDecoration(
-        color: Colors.blueAccent,
-        borderRadius: BorderRadius.all(Radius.circular(15)),
-        border: Border.all(width: 5, color: Colors.red),
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                width: 50,
-                height: 50,
-                margin: EdgeInsets.only(left: 10.0),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(50)),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Icon(
-                    Icons.person_2_sharp,
-                    size: 30,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          SizedBox(
-            width: 15,
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Senha',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              Text(
-                senha,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 15,
-                ),
-              ),
-            ],
-          ),
-          SizedBox(
-            width: 15,
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              IconButton(
-                icon: Icon(Icons.remove_red_eye),
-                onPressed: () {
-                  setState(() {
-                    obscureText = !obscureText;
-                  });
-                },
-              ),
-            ],
-          ),
-          SizedBox(
-            width: 15,
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              IconButton(
-                icon: Icon(Icons.add),
-                onPressed: () {
-                  setState(() {
-                    senha += '*';
-                  });
-                },
               ),
             ],
           ),
