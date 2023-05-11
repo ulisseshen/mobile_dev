@@ -35,6 +35,19 @@ void main() {
       ),
       body: ListView(
         children: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Image(
+                  height: 100,
+                  image: NetworkImage(
+                      'https://s2.glbimg.com/WSRi-qFbVSvC35g2_gQg8EffYA0=/0x0:924x559/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_1f551ea7087a47f39ead75f64041559a/internal_photos/bs/2023/u/h/uv4R3TRzWnIAFD4kE9Iw/bolsonaro.jpg')),
+              Image(
+                  height: 100,
+                  image: NetworkImage(
+                      'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Dilma_Rousseff_-_foto_oficial_2011-01-09.jpg/1200px-Dilma_Rousseff_-_foto_oficial_2011-01-09.jpg')),
+            ],
+          ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
