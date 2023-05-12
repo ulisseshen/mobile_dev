@@ -37,38 +37,22 @@ void main() {
         children: <Widget>[
           Stack(
             children: [
-              Positioned(
-                left: 200,
-                child: CircleAvatar(
-                    radius: 50,
-                    backgroundImage: NetworkImage(
-                        'https://s2.glbimg.com/WSRi-qFbVSvC35g2_gQg8EffYA0=/0x0:924x559/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_1f551ea7087a47f39ead75f64041559a/internal_photos/bs/2023/u/h/uv4R3TRzWnIAFD4kE9Iw/bolsonaro.jpg')),
-              ),
-              Positioned(
-                left: 150,
-                child: CircleAvatar(
-                    radius: 50,
-                    backgroundImage: NetworkImage(
-                        'https://s2.glbimg.com/WSRi-qFbVSvC35g2_gQg8EffYA0=/0x0:924x559/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_1f551ea7087a47f39ead75f64041559a/internal_photos/bs/2023/u/h/uv4R3TRzWnIAFD4kE9Iw/bolsonaro.jpg')),
-              ),
-              Positioned(
-                left: 100,
-                child: CircleAvatar(
-                    radius: 50,
-                    backgroundImage: NetworkImage(
-                        'https://s2.glbimg.com/WSRi-qFbVSvC35g2_gQg8EffYA0=/0x0:924x559/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_1f551ea7087a47f39ead75f64041559a/internal_photos/bs/2023/u/h/uv4R3TRzWnIAFD4kE9Iw/bolsonaro.jpg')),
-              ),
-              Positioned(
-                left: 50,
-                child: CircleAvatar(
-                    radius: 50,
-                    backgroundImage: NetworkImage(
-                        'https://s2.glbimg.com/WSRi-qFbVSvC35g2_gQg8EffYA0=/0x0:924x559/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_1f551ea7087a47f39ead75f64041559a/internal_photos/bs/2023/u/h/uv4R3TRzWnIAFD4kE9Iw/bolsonaro.jpg')),
-              ),
               CircleAvatar(
                   radius: 50,
                   backgroundImage: NetworkImage(
                       'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Dilma_Rousseff_-_foto_oficial_2011-01-09.jpg/1200px-Dilma_Rousseff_-_foto_oficial_2011-01-09.jpg')),
+              Positioned(
+                top: 60,
+                left: 50,
+                child: CircleAvatar(
+                  backgroundColor: Colors.transparent,
+                  foregroundColor: Colors.black,
+                  child: Icon(
+                    Icons.photo_camera,
+                    size: 30,
+                  ),
+                ),
+              ),
             ],
           ),
           Padding(
