@@ -35,25 +35,53 @@ void main() {
       ),
       body: ListView(
         children: <Widget>[
-          Stack(
-            children: [
-              CircleAvatar(
-                  radius: 50,
-                  backgroundImage: NetworkImage(
-                      'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Dilma_Rousseff_-_foto_oficial_2011-01-09.jpg/1200px-Dilma_Rousseff_-_foto_oficial_2011-01-09.jpg')),
-              Positioned(
-                top: 60,
-                left: 50,
-                child: CircleAvatar(
-                  backgroundColor: Colors.transparent,
-                  foregroundColor: Colors.black,
-                  child: Icon(
-                    Icons.photo_camera,
-                    size: 30,
-                  ),
+          Padding(
+            padding: const EdgeInsets.all(20),
+            child: Row(
+              children: [
+                Stack(
+                  children: [
+                    CircleAvatar(
+                        radius: 50,
+                        backgroundImage: AssetImage('imagens/bolossauro.jpeg')),
+                    Positioned(
+                      top: 65,
+                      left: 55,
+                      child: CircleAvatar(
+                        backgroundColor: Colors.white,
+                        foregroundColor: Colors.black,
+                        child: Icon(
+                          Icons.photo_camera,
+                          size: 30,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              ),
-            ],
+                SizedBox(
+                  width: 20,
+                ),
+                Stack(
+                  children: [
+                    CircleAvatar(
+                        radius: 50,
+                        backgroundImage: AssetImage('imagens/presidenta.jpg')),
+                    Positioned(
+                      top: 65,
+                      left: 55,
+                      child: CircleAvatar(
+                        backgroundColor: Colors.white,
+                        foregroundColor: Colors.black,
+                        child: Icon(
+                          Icons.photo_camera,
+                          size: 30,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
