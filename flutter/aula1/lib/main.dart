@@ -170,39 +170,41 @@ void main() {
               child: Text('butão'),
             ),
           ),
-          MensagemDilma(),
-          SizedBox(height: 20),
-          MensagemBolsonaro(),
-          SizedBox(height: 20),
-          MensagemDilma(),
-          SizedBox(height: 20),
-          MensagemBolsonaro(),
-          SizedBox(height: 20),
-          MensagemDilma(),
-          SizedBox(height: 20),
-          MensagemBolsonaro(),
-          SizedBox(height: 20),
-          MensagemDilma(),
-          SizedBox(height: 20),
-          MensagemBolsonaro(),
-          SizedBox(height: 20),
+          Mensagem(
+            mensagem: 'taokei hahahha',
+            nome: 'bolossauro',
+            caminhoImagem: 'imagens/bolossauro.jpeg',
+          ),
+          Mensagem(
+            mensagem: 'estocar vento, salve mandioca',
+            nome: 'Presidenta',
+            caminhoImagem: 'imagens/presidenta.jpg',
+          ),
         ],
       ),
     ),
   ));
 }
 
-class MensagemBolsonaro extends StatelessWidget {
-  const MensagemBolsonaro({
+class Mensagem extends StatelessWidget {
+  const Mensagem({
+    required this.mensagem,
+    required this.nome,
+    required this.caminhoImagem,
     super.key,
   });
+
+  final String caminhoImagem;
+  final String nome;
+  final String mensagem;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
       height: 100,
-      margin: EdgeInsets.symmetric(horizontal: 10.0),
+      margin: EdgeInsets.symmetric(horizontal: 10.0)
+          .copyWith(top: 10.0, bottom: 10),
       decoration: BoxDecoration(
         color: Colors.blueAccent,
         borderRadius: BorderRadius.all(Radius.circular(15)),
@@ -215,21 +217,10 @@ class MensagemBolsonaro extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                width: 50,
-                height: 50,
-                margin: EdgeInsets.only(left: 10.0),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(50)),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Icon(
-                    Icons.person_2_sharp,
-                    size: 30,
-                  ),
-                ),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: CircleAvatar(
+                    radius: 30, backgroundImage: AssetImage(caminhoImagem)),
               ),
             ],
           ),
@@ -241,7 +232,7 @@ class MensagemBolsonaro extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Bolsonaro',
+                nome,
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 18,
@@ -249,78 +240,7 @@ class MensagemBolsonaro extends StatelessWidget {
                 ),
               ),
               Text(
-                'Mensagem 321',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 15,
-                ),
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class MensagemDilma extends StatelessWidget {
-  const MensagemDilma({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height: 100,
-      margin: EdgeInsets.symmetric(horizontal: 10.0).copyWith(top: 10.0),
-      decoration: BoxDecoration(
-        color: Colors.blueAccent,
-        borderRadius: BorderRadius.all(Radius.circular(15)),
-        border: Border.all(width: 5, color: Colors.red),
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                width: 50,
-                height: 50,
-                margin: EdgeInsets.only(left: 10.0),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(50)),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Icon(
-                    Icons.person_2_sharp,
-                    size: 30,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          SizedBox(
-            width: 15,
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Dilma',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              Text(
-                'Mensagem 123',
+                mensagem,
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 15,
