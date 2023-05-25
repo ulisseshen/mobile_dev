@@ -114,21 +114,7 @@ void main() {
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: TextFormField(
-              initialValue: senha,
-              obscureText: true,
-              decoration: InputDecoration(
-                enabled: true,
-                suffixIcon: IconButton(
-                  icon: Icon(Icons.remove_red_eye),
-                  onPressed: () {},
-                ),
-                label: Text('Senha'),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(40.0)),
-                ),
-              ),
-            ),
+            child: TextFormSenha(),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -151,10 +137,7 @@ void main() {
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: OutlinedButton(
-              onPressed: () {},
-              child: Text('butão'),
-            ),
+            child: OutlinedButtonEntrar(senha: senha),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -184,6 +167,69 @@ void main() {
       ),
     ),
   ));
+}
+
+class OutlinedButtonEntrar extends StatelessWidget {
+  const OutlinedButtonEntrar({
+    super.key,
+    required this.senha,
+  });
+
+  final String senha;
+
+  @override
+  Widget build(BuildContext context) {
+    return OutlinedButton(
+      onPressed: () {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text("Entrando no sistema"),
+        ));
+      },
+      child: Text('butão'),
+    );
+  }
+}
+
+class TextFormSenha extends StatefulWidget {
+  const TextFormSenha({
+    super.key,
+  });
+
+  @override
+  State<TextFormSenha> createState() => _TextFormSenhaState();
+}
+
+class _TextFormSenhaState extends State<TextFormSenha> {
+  final senha = '44455';
+  bool obscureText = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final icon = obscureText ? Icons.visibility_off : Icons.visibility;
+    return TextFormField(
+      initialValue: senha,
+      obscureText: obscureText,
+      decoration: InputDecoration(
+        enabled: true,
+        suffixIcon: IconButton(
+          icon: Icon(icon),
+          onPressed: () {
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              content: Text("Minha senha é: $senha"),
+            ));
+            setState(() {
+              obscureText = !obscureText;
+            });
+            print(obscureText);
+          },
+        ),
+        label: Text('Senha'),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(40.0)),
+        ),
+      ),
+    );
+  }
 }
 
 class Mensagem extends StatelessWidget {
