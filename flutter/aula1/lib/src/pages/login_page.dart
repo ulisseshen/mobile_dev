@@ -15,8 +15,10 @@ class LoginPage extends StatelessWidget {
           children: [
             Text("centralizado"),
             OutlinedButton(
-                onPressed: () {
-                  Navigator.of(context).pushReplacementNamed("/home");
+                onPressed: () async {
+                  final navigator = Navigator.of(context);
+                  await Future.delayed(Duration(seconds: 2));
+                  navigator.pushReplacementNamed("/home");
                 },
                 child: Text("Entrar"))
           ],
