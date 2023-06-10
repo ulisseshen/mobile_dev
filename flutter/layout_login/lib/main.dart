@@ -12,19 +12,23 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        backgroundColor: Colors.white,
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 30),
           child: Column(children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
-              children: const [
-                Text(
-                  'Skip',
-                  style: TextStyle(
-                    color: Color(0xff0088CC),
-                    fontWeight: FontWeight.w500,
-                    fontSize: 20,
-                    fontFamily: 'Inter',
+              children: [
+                TextButton(
+                  onPressed: () {},
+                  child: const Text(
+                    'Skip',
+                    style: TextStyle(
+                      color: Color(0xff0088CC),
+                      fontWeight: FontWeight.w500,
+                      fontSize: 20,
+                      fontFamily: 'Inter',
+                    ),
                   ),
                 ),
               ],
@@ -55,8 +59,15 @@ class MyApp extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               height: 32,
-              child:
-                  ElevatedButton(onPressed: () {}, child: const Text('Login')),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+                onPressed: () {},
+                child: const Text('Login'),
+              ),
             ),
             const SizedBox(
               height: 20,
@@ -65,8 +76,69 @@ class MyApp extends StatelessWidget {
               width: double.infinity,
               height: 32,
               child: ElevatedButton(
-                  onPressed: () {}, child: const Text('Registrar')),
-            )
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+                onPressed: () {},
+                child: const Text('Registrar'),
+              ),
+            ),
+            const SizedBox(height: 30),
+            Row(
+              children: const [
+                Expanded(
+                  child: Divider(
+                    color: Color(0xff0088CC),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 15),
+                  child: Text(
+                    'Logar com',
+                    style: TextStyle(fontWeight: FontWeight.w500),
+                  ),
+                ),
+                Expanded(
+                  child: Divider(
+                    color: Color(0xff0088CC),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 22,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.facebook,
+                    color: Color(0xff0088CC),
+                    size: 32,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 33),
+                  child: Container(
+                    color: Colors.black,
+                    height: 32,
+                    width: 1,
+                  ),
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.apple,
+                    color: Color(0xff0088CC),
+                    size: 32,
+                  ),
+                ),
+              ],
+            ),
           ]),
         ),
       ),
