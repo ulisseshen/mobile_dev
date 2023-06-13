@@ -68,6 +68,38 @@ class LoginPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10)),
                 hintText: "Entre com sua senha",
               ),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size(double.infinity, 50),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+              onPressed: () {},
+              child: const Text('Login',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
+            ),
+            const SizedBox(height: 15),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  'Você não tem uma conta?',
+                ),
+                TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      'Registre-se',
+                      style: TextStyle(
+                        color: Color(0xff0088CC),
+                        fontWeight: FontWeight.w500,
+                        fontSize: 16,
+                        fontFamily: 'Inter',
+                      ),
+                    ))
+              ],
             )
           ],
         ),
