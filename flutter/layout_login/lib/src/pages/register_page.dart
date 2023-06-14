@@ -6,28 +6,30 @@ class RegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text(
-          "Registro",
-          style: TextStyle(
-              color: Colors.black, fontSize: 18, fontWeight: FontWeight.w500),
-        ),
-        leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.arrow_back_ios,
-            color: Colors.black,
-            size: 20,
-          ),
-        ),
-        backgroundColor: Colors.white,
-        elevation: 0,
-      ),
       backgroundColor: Colors.white,
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 30),
         children: [
+          AppBar(
+            centerTitle: true,
+            title: const Text(
+              "Registro",
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500),
+            ),
+            leading: IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.arrow_back_ios,
+                color: Colors.black,
+                size: 20,
+              ),
+            ),
+            backgroundColor: Colors.white,
+            elevation: 0,
+          ),
           const SizedBox(height: 50),
           const Center(
             child: CircleAvatar(
