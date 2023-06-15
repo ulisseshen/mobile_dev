@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'src/pages/login_page.dart';
-import 'src/pages/login_screen_page.dart';
+import 'src/pages/initial_page.dart';
 import 'src/pages/register_page.dart';
 
 void main() {
@@ -13,9 +13,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-        debugShowCheckedModeBanner: false,
-        // home: LoginScreenPage(),
-        //home: LoginPage(),
-        home: RegisterPage());
+      debugShowCheckedModeBanner: false,
+      home: InitialPage(),
+      //home: LoginPage(),
+      //home: RegisterPage()
+    );
   }
 }
