@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math' as math;
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({super.key});

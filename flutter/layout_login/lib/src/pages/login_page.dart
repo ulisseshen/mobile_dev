@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math' as math;
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -61,7 +62,14 @@ class LoginPage extends StatelessWidget {
             const SizedBox(height: 15),
             TextFormField(
               decoration: InputDecoration(
-                prefixIcon: const Icon(Icons.key),
+                prefixIcon: Transform.flip(
+                  flipY: true,
+                  // alignment: Alignment.center,
+                  // transform: Matrix4.rotationY(math.pi),
+                  child: Transform.rotate(
+                      angle: -math.pi * 125 / 180,
+                      child: const Icon(Icons.key)),
+                ),
                 suffixIcon: const Icon(Icons.remove_red_eye),
                 border: OutlineInputBorder(
                     borderSide: const BorderSide(
