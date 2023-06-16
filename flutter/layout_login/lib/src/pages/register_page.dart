@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:math' as math;
+import 'package:layout_login/src/widgets/text_form_field_senha.dart';
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({super.key});
@@ -71,31 +71,9 @@ class RegisterPage extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 15),
-          TextFormField(
-            decoration: InputDecoration(
-              prefixIcon: const Icon(Icons.key),
-              suffixIcon: const Icon(Icons.remove_red_eye),
-              border: OutlineInputBorder(
-                  borderSide: const BorderSide(
-                    color: Color.fromARGB(102, 0, 0, 0),
-                  ),
-                  borderRadius: BorderRadius.circular(10)),
-              hintText: "Entre com sua senha",
-            ),
-          ),
+          TextFormFieldSenha(hintText: "Entre com sua senha"),
           const SizedBox(height: 15),
-          TextFormField(
-            decoration: InputDecoration(
-              prefixIcon: const Icon(Icons.key),
-              suffixIcon: const Icon(Icons.remove_red_eye),
-              border: OutlineInputBorder(
-                  borderSide: const BorderSide(
-                    color: Color.fromARGB(102, 0, 0, 0),
-                  ),
-                  borderRadius: BorderRadius.circular(10)),
-              hintText: "Confirme sua senha",
-            ),
-          ),
+          TextFormFieldSenha(hintText: 'Confirme sua senha'),
           const SizedBox(height: 20),
           ElevatedButton(
             style: ElevatedButton.styleFrom(

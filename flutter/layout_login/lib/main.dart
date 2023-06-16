@@ -15,8 +15,8 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       //home: InitialPage(),
-      home: LoginPage(),
-      //home: RegisterPage()
-    );
+      //home: LoginPage(),
+      home: RegisterPage(),
+    ); //);
   }
 }
