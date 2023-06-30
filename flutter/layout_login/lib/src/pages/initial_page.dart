@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../app/routes.dart';
+
 class InitialPage extends StatelessWidget {
   const InitialPage({super.key});
 
@@ -59,7 +61,9 @@ class InitialPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(Routes.login);
+              },
               child: const Text('Login'),
             ),
           ),
@@ -75,7 +79,9 @@ class InitialPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(Routes.register);
+              },
               child: const Text('Registrar'),
             ),
           ),

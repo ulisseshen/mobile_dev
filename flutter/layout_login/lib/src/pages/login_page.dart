@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
 import 'package:layout_login/src/widgets/text_form_field_senha.dart';
+import '../../app/routes.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -27,7 +27,10 @@ class _LoginPageState extends State<LoginPage> {
                   fontWeight: FontWeight.w500),
             ),
             leading: IconButton(
-              onPressed: () {},
+              tooltip: 'Voltar',
+              onPressed: () {
+                Navigator.pop(context);
+              },
               icon: const Icon(
                 Icons.arrow_back_ios,
                 color: Colors.black,
@@ -86,7 +89,9 @@ class _LoginPageState extends State<LoginPage> {
                 'Você não tem uma conta?',
               ),
               TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(Routes.register);
+                  },
                   child: const Text(
                     'Registre-se',
                     style: TextStyle(
