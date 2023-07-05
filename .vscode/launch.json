@@ -5,6 +5,12 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "ecommerce",
+            "cwd": "flutter\\ecommerce_app",
+            "type": "dart",
+            "request": "launch",
+        },
+        {
             "name": "aula1",
             "cwd": "flutter\\aula1",
             "request": "launch",
