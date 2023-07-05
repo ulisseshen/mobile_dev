@@ -36,20 +36,101 @@ class Onboarding extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _CyberLinio(),
-            Row(
-              children: [
-                _Desconto(),
-                Image.asset(
-                  "imagens/raio.png",
-                  height: 162,
-                  width: 162,
-                ),
-              ],
+            _Header(),
+            SizedBox(
+              height: 130 - 22,
             ),
+            _Middle(),
           ],
         ),
       ),
+    );
+  }
+}
+
+class _Middle extends StatelessWidget {
+  const _Middle({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      clipBehavior: Clip.none,
+      children: [
+        Container(
+          height: 142,
+        ),
+        Positioned(
+          top: 20,
+          child: Image.asset(
+            "imagens/mac.png",
+            height: 142,
+          ),
+        ),
+        Positioned(
+            top: 220,
+            left: 170,
+            child: Image.asset(
+              "imagens/controlezin.png",
+              height: 80,
+            )),
+        Positioned(
+          top: 80,
+          left: 110,
+          child: Image.asset(
+            "imagens/nintendo.png",
+            height: 142,
+          ),
+        ),
+        Positioned(
+          top: -25,
+          left: 160,
+          child: Image.asset(
+            "imagens/headphone.png",
+            height: 148,
+          ),
+        ),
+        Positioned(
+            top: 190,
+            child: Image.asset(
+              "imagens/alexa.png",
+              height: 65,
+            )),
+        Positioned(
+            top: 220,
+            left: 80,
+            child: Image.asset(
+              "imagens/foneblutu.png",
+              height: 90,
+            )),
+      ],
+    );
+  }
+}
+
+class _Header extends StatelessWidget {
+  const _Header({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      clipBehavior: Clip.none,
+      children: [
+        _CyberLinio(),
+        Positioned(top: 117, child: _Desconto()),
+        Positioned(
+          top: 70,
+          left: 150,
+          child: Image.asset(
+            "imagens/raio.png",
+            height: 142,
+            width: 142,
+          ),
+        ),
+      ],
     );
   }
 }
@@ -113,6 +194,7 @@ class _CyberLinio extends StatelessWidget {
         Text(
           "CYBER",
           style: TextStyle(
+              height: 1,
               fontSize: 60,
               fontWeight: FontWeight.w800,
               color: Color(0xFFF4BD46)),
@@ -120,6 +202,7 @@ class _CyberLinio extends StatelessWidget {
         Text(
           "LINIO",
           style: TextStyle(
+              height: 1,
               fontSize: 60,
               fontWeight: FontWeight.w800,
               color: Color(0xFFF4BD46)),
