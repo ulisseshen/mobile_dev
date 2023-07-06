@@ -33,19 +33,24 @@ class Onboarding extends StatelessWidget {
             colors: [Color(0xFFCE048C), Color(0xFF4D0A8E)],
           ),
         ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30).copyWith(top: 80),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _Header(),
-              SizedBox(
-                height: 130 - 22,
-              ),
-              _Middle(),
-              _Bottom()
-            ],
-          ),
+        child: ListView(
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 40),
+          // crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _Header(),
+            SizedBox(
+              height: 130 - 22,
+            ),
+            _Middle(),
+            _Bottom()
+          ],
+        ),
+      ),
+      floatingActionButton: TextButton(
+        onPressed: () {},
+        child: Text(
+          "SKIP",
+          style: TextStyle(color: Colors.white, fontSize: 14),
         ),
       ),
     );
@@ -63,6 +68,9 @@ class _Bottom extends StatelessWidget {
           "*Valid from 27/03 to 01/04 2022. Min stock: 1 unit",
           style: TextStyle(color: Colors.white, fontSize: 8),
         ),
+        SizedBox(
+          height: 27,
+        ),
         ElevatedButton(
           style: ElevatedButton.styleFrom(
               backgroundColor: Colors.white,
@@ -74,7 +82,39 @@ class _Bottom extends StatelessWidget {
             "LOG IN",
             style: TextStyle(color: Color(0xFFFF5500)),
           ),
-        )
+        ),
+        SizedBox(
+          height: 16,
+        ),
+        Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+          SizedBox(
+            height: 6,
+            width: 6,
+            child: CircleAvatar(
+              backgroundColor: Color(0xFFCFCFCF),
+            ),
+          ),
+          SizedBox(
+            width: 6,
+          ),
+          SizedBox(
+            height: 6,
+            width: 6,
+            child: CircleAvatar(
+              backgroundColor: Color(0xFFCFCFCF),
+            ),
+          ),
+          SizedBox(
+            width: 6,
+          ),
+          Container(
+            height: 6,
+            width: 24,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(44),
+                color: Color(0xFFFF5500)),
+          )
+        ])
       ],
     );
   }
@@ -204,6 +244,9 @@ class _Desconto extends StatelessWidget {
         Text(
           "in technology",
           style: TextStyle(fontSize: 20, color: Colors.white),
+        ),
+        SizedBox(
+          height: 9,
         ),
         Text(
           "FREE SHIPPING",
