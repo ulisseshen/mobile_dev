@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Onboarding(),
     );
   }
@@ -33,24 +34,32 @@ class Onboarding extends StatelessWidget {
             colors: [Color(0xFFCE048C), Color(0xFF4D0A8E)],
           ),
         ),
-        child: ListView(
-          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 40),
-          // crossAxisAlignment: CrossAxisAlignment.start,
+        child: Stack(
           children: [
-            _Header(),
-            SizedBox(
-              height: 130 - 22,
+            Positioned(
+              top: 20,
+              right: 10,
+              child: TextButton(
+                onPressed: () {},
+                child: Text(
+                  "SKIP",
+                  style: TextStyle(color: Colors.white, fontSize: 14),
+                ),
+              ),
             ),
-            _Middle(),
-            _Bottom()
+            ListView(
+              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 40),
+              // crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _Header(),
+                SizedBox(
+                  height: 130 - 22,
+                ),
+                _Middle(),
+                _Bottom()
+              ],
+            ),
           ],
-        ),
-      ),
-      floatingActionButton: TextButton(
-        onPressed: () {},
-        child: Text(
-          "SKIP",
-          style: TextStyle(color: Colors.white, fontSize: 14),
         ),
       ),
     );
