@@ -23,60 +23,89 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Color(0xFFF7F6F4),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
-        child: SizedBox(
-          height: 46,
-          child: Row(
-            children: [
-              Expanded(
-                  child: TextField(
-                decoration: InputDecoration(
-                    filled: true,
-                    fillColor: Colors.white,
-                    prefixIcon: Icon(
-                      CupertinoIcons.search,
-                      color: grayColor,
-                    ),
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide.none,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(64),
-                      ),
-                    ),
-                    hintText: "Search products",
-                    hintStyle: TextStyle(
-                      color: grayColor,
-                      fontSize: 12,
-                    )),
-              )),
-              SizedBox(
-                width: 8,
-              ),
-              Stack(
+        child: Column(
+          children: [
+            //widgt pesquisa
+            SizedBox(
+              height: 46,
+              child: Row(
                 children: [
-                  SizedBox(
-                    width: 46,
-                    height: 46,
-                    child: CircleAvatar(
-                      backgroundColor: Colors.white,
-                      child: Icon(
-                        CupertinoIcons.bell,
-                        color: grayColor,
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    top: -13,
-                    right: 0,
-                    child: SizedBox(
-                        width: 10,
-                        child: CircleAvatar(
-                          backgroundColor: Color(0xFFFF5500),
+                  Expanded(
+                      child: TextField(
+                    decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Colors.white,
+                        prefixIcon: Icon(
+                          CupertinoIcons.search,
+                          color: grayColor,
+                        ),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(64),
+                          ),
+                        ),
+                        hintText: "Search products",
+                        hintStyle: TextStyle(
+                          color: grayColor,
+                          fontSize: 12,
                         )),
+                  )),
+                  SizedBox(
+                    width: 8,
+                  ),
+                  //notificação
+                  Stack(
+                    children: [
+                      SizedBox(
+                        width: 46,
+                        height: 46,
+                        child: CircleAvatar(
+                          backgroundColor: Colors.white,
+                          child: Icon(
+                            CupertinoIcons.bell,
+                            color: grayColor,
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: -13,
+                        right: 0,
+                        child: SizedBox(
+                            width: 10,
+                            child: CircleAvatar(
+                              backgroundColor: Color(0xFFFF5500),
+                            )),
+                      ),
+                    ],
                   ),
                 ],
               ),
-            ],
-          ),
+            ),
+            SizedBox(
+              height: 32,
+            ),
+
+            //widget display
+            Container(
+              height: 149,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.all(Radius.circular(26)),
+              ),
+              child: Row(children: [
+                Column(
+                  children: [
+                    Text("cyber"),
+                    Text("line"),
+                  ],
+                ),
+                Image.asset(
+                  "imagens/display.png",
+                )
+              ]),
+            )
+          ],
         ),
       ),
 
