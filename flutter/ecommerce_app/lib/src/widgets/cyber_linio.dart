@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class CyberLinio extends StatelessWidget {
-  const CyberLinio({super.key, required this.FontSize});
+  const CyberLinio({super.key, required this.fontSize});
 
-  final double FontSize;
+  final double fontSize;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class CyberLinio extends StatelessWidget {
           "CYBER",
           style: TextStyle(
               height: 1,
-              fontSize: FontSize,
+              fontSize: fontSize,
               fontWeight: FontWeight.w800,
               color: Color(0xFFF4BD46)),
         ),
@@ -22,7 +22,7 @@ class CyberLinio extends StatelessWidget {
           "LINIO",
           style: TextStyle(
               height: 1,
-              fontSize: FontSize,
+              fontSize: fontSize,
               fontWeight: FontWeight.w800,
               color: Color(0xFFF4BD46)),
         ),

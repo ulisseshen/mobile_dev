@@ -107,7 +107,7 @@ class _HomePageState extends State<HomePage> {
                 Column(
                   children: [
                     CyberLinio(
-                      FontSize: 26,
+                      fontSize: 26,
                     ),
                     Text.rich(TextSpan(children: [
                       TextSpan(text: "40%"),
