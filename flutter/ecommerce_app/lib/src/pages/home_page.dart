@@ -88,20 +88,43 @@ class _HomePageState extends State<HomePage> {
 
             //widget display
             Container(
+              width: double.infinity,
               height: 149,
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Color(0xff4D0A8E),
                 borderRadius: BorderRadius.all(Radius.circular(26)),
               ),
-              child: Row(children: [
+              child: Stack(clipBehavior: Clip.none, children: [
                 Column(
                   children: [
                     Text("cyber"),
                     Text("line"),
+                    Text.rich(TextSpan(children: [
+                      TextSpan(text: "40%"),
+                      TextSpan(text: "DSCNT"),
+                    ])),
+                    Text("in technology"),
+                    Container(
+                      padding: EdgeInsets.symmetric(vertical: 2, horizontal: 4),
+                      height: 14,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.all(Radius.circular(42)),
+                      ),
+                      child: Text(
+                        "FREE SHIPPING",
+                        style: TextStyle(fontSize: 8, color: orangeColor),
+                      ),
+                    )
                   ],
                 ),
-                Image.asset(
-                  "imagens/display.png",
+                Positioned(
+                  right: 0,
+                  top: -30,
+                  child: Image.asset(
+                    "imagens/display.png",
+                    height: 210,
+                  ),
                 )
               ]),
             )
