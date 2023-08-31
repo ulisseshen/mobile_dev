@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/cyber_linio.dart';
+import '../widgets/desconto.dart';
 
 class OnboardingPage extends StatelessWidget {
   const OnboardingPage({super.key});
@@ -37,7 +38,17 @@ class OnboardingPage extends StatelessWidget {
               children: [
                 _Header(),
                 SizedBox(
-                  height: 130 - 22,
+                  height: 90,
+                ),
+                Text(
+                  "FREE SHIPPING",
+                  style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500,
+                      color: Color(0xFFF4BD46)),
+                ),
+                SizedBox(
+                  height: 50 - 22,
                 ),
                 _Middle(),
                 _Bottom()
@@ -189,7 +200,7 @@ class _Header extends StatelessWidget {
       clipBehavior: Clip.none,
       children: [
         CyberLinio(fontSize: 60),
-        Positioned(top: 117, child: _Desconto()),
+        Positioned(top: 117, child: Desconto()),
         Positioned(
           top: 70,
           left: 150,
@@ -199,55 +210,6 @@ class _Header extends StatelessWidget {
             width: 142,
           ),
         ),
-      ],
-    );
-  }
-}
-
-class _Desconto extends StatelessWidget {
-  const _Desconto({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Text(
-              "40%",
-              style: TextStyle(
-                fontSize: 40,
-                fontWeight: FontWeight.w700,
-                color: Colors.white,
-              ),
-            ),
-            Text(
-              "DSCNT",
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.white,
-              ),
-            )
-          ],
-        ),
-        Text(
-          "in technology",
-          style: TextStyle(fontSize: 20, color: Colors.white),
-        ),
-        SizedBox(
-          height: 9,
-        ),
-        Text(
-          "FREE SHIPPING",
-          style: TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.w500,
-              color: Color(0xFFF4BD46)),
-        )
       ],
     );
   }
