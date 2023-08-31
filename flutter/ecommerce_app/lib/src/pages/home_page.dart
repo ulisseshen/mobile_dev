@@ -3,6 +3,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/cyber_linio.dart';
+
 class HomePage extends StatefulWidget {
   HomePage({super.key});
 
@@ -104,8 +106,9 @@ class _HomePageState extends State<HomePage> {
               child: Stack(clipBehavior: Clip.none, children: [
                 Column(
                   children: [
-                    Text("cyber"),
-                    Text("line"),
+                    CyberLinio(
+                      FontSize: 26,
+                    ),
                     Text.rich(TextSpan(children: [
                       TextSpan(text: "40%"),
                       TextSpan(text: "DSCNT"),

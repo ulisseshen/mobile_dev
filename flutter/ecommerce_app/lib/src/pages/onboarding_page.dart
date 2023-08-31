@@ -188,7 +188,7 @@ class _Header extends StatelessWidget {
     return Stack(
       clipBehavior: Clip.none,
       children: [
-        CyberLinio(),
+        CyberLinio(FontSize: 60),
         Positioned(top: 117, child: _Desconto()),
         Positioned(
           top: 70,
