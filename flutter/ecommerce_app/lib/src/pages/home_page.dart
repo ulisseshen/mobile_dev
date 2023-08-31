@@ -91,7 +91,14 @@ class _HomePageState extends State<HomePage> {
               width: double.infinity,
               height: 149,
               decoration: BoxDecoration(
-                color: Color(0xff4D0A8E),
+                gradient: LinearGradient(
+                  begin: Alignment.topRight,
+                  end: Alignment.bottomLeft,
+                  colors: [
+                    Color(0xFF4D0A8E),
+                    Color(0xFFCE048C),
+                  ],
+                ),
                 borderRadius: BorderRadius.all(Radius.circular(26)),
               ),
               child: Stack(clipBehavior: Clip.none, children: [
