@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/cyber_linio.dart';
+import '../widgets/desconto.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({super.key});
@@ -26,6 +27,7 @@ class _HomePageState extends State<HomePage> {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             //widgt pesquisa
             SizedBox(
@@ -104,29 +106,29 @@ class _HomePageState extends State<HomePage> {
                 borderRadius: BorderRadius.all(Radius.circular(26)),
               ),
               child: Stack(clipBehavior: Clip.none, children: [
-                Column(
-                  children: [
-                    CyberLinio(
-                      fontSize: 26,
-                    ),
-                    Text.rich(TextSpan(children: [
-                      TextSpan(text: "40%"),
-                      TextSpan(text: "DSCNT"),
-                    ])),
-                    Text("in technology"),
-                    Container(
-                      padding: EdgeInsets.symmetric(vertical: 2, horizontal: 4),
-                      height: 14,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.all(Radius.circular(42)),
+                Padding(
+                  padding: EdgeInsets.only(top: 19, left: 24),
+                  child: Column(
+                    children: [
+                      CyberLinio(
+                        fontSize: 26,
                       ),
-                      child: Text(
-                        "FREE SHIPPING",
-                        style: TextStyle(fontSize: 8, color: orangeColor),
-                      ),
-                    )
-                  ],
+                      SizedBox(height: 48, child: FittedBox(child: Desconto())),
+                      Container(
+                        padding:
+                            EdgeInsets.symmetric(vertical: 2, horizontal: 4),
+                        height: 14,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.all(Radius.circular(42)),
+                        ),
+                        child: Text(
+                          "FREE SHIPPING",
+                          style: TextStyle(fontSize: 8, color: orangeColor),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
                 Positioned(
                   right: 0,
@@ -137,7 +139,15 @@ class _HomePageState extends State<HomePage> {
                   ),
                 )
               ]),
-            )
+            ),
+
+            Padding(
+              padding: const EdgeInsets.only(left: 50),
+              child: Text(
+                "*Valid from 27/03 to 01/04 2022. Min stock: 1 unit",
+                style: TextStyle(fontSize: 9, color: Color(0xff696969)),
+              ),
+            ),
           ],
         ),
       ),
