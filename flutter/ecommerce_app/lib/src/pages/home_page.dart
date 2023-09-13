@@ -16,6 +16,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final Color grayColor = const Color(0xFFCFCFCF);
 
+  final Color chipTextColor = const Color(0xFF343A40);
+
   final Color orangeColor = const Color(0xFFFF5500);
 
   int _currentIndex = 0;
@@ -147,6 +149,103 @@ class _HomePageState extends State<HomePage> {
               child: Text(
                 "*Valid from 27/03 to 01/04 2022. Min stock: 1 unit",
                 style: TextStyle(fontSize: 9, color: Color(0xff696969)),
+              ),
+            ),
+
+            //widget categorias
+            SizedBox(
+              height: 23,
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  Chip(
+                    label: Text("Technology"),
+                    labelStyle: TextStyle(color: chipTextColor),
+                    backgroundColor: Colors.white,
+                    side: BorderSide(
+                      color: grayColor.withOpacity(0.5),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 16,
+                  ),
+                  Chip(
+                    label: Text("Fashion"),
+                    labelStyle: TextStyle(color: chipTextColor),
+                    backgroundColor: Colors.white,
+                    side: BorderSide(
+                      color: grayColor.withOpacity(0.5),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 16,
+                  ),
+                  Chip(
+                    label: Text("Sports"),
+                    labelStyle: TextStyle(color: chipTextColor),
+                    backgroundColor: Colors.white,
+                    side: BorderSide(
+                      color: grayColor.withOpacity(0.5),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 16,
+                  ),
+                  Chip(
+                    label: Text("Home"),
+                    labelStyle: TextStyle(color: chipTextColor),
+                    backgroundColor: Colors.white,
+                    side: BorderSide(
+                      color: grayColor.withOpacity(0.5),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 16,
+                  ),
+                  Chip(
+                    label: Text("Technology"),
+                    labelStyle: TextStyle(color: chipTextColor),
+                    backgroundColor: Colors.white,
+                    side: BorderSide(
+                      color: grayColor.withOpacity(0.5),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 16,
+                  ),
+                  Chip(
+                    label: Text("Fashion"),
+                    labelStyle: TextStyle(color: chipTextColor),
+                    backgroundColor: Colors.white,
+                    side: BorderSide(
+                      color: grayColor.withOpacity(0.5),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 16,
+                  ),
+                  Chip(
+                    label: Text("Sports"),
+                    labelStyle: TextStyle(color: chipTextColor),
+                    backgroundColor: Colors.white,
+                    side: BorderSide(
+                      color: grayColor.withOpacity(0.5),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 16,
+                  ),
+                  Chip(
+                    label: Text("Home"),
+                    labelStyle: TextStyle(color: chipTextColor),
+                    backgroundColor: Colors.white,
+                    side: BorderSide(
+                      color: grayColor.withOpacity(0.5),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
