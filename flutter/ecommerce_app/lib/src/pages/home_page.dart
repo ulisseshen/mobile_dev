@@ -109,6 +109,7 @@ class _HomePageState extends State<HomePage> {
                 Padding(
                   padding: EdgeInsets.only(top: 19, left: 24),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       CyberLinio(
                         fontSize: 26,
@@ -142,7 +143,7 @@ class _HomePageState extends State<HomePage> {
             ),
 
             Padding(
-              padding: const EdgeInsets.only(left: 50),
+              padding: const EdgeInsets.only(left: 80),
               child: Text(
                 "*Valid from 27/03 to 01/04 2022. Min stock: 1 unit",
                 style: TextStyle(fontSize: 9, color: Color(0xff696969)),
