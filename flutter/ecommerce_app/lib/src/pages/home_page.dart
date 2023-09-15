@@ -28,227 +28,318 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Color(0xFFF7F6F4),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            //widgt pesquisa
-            SizedBox(
-              height: 46,
-              child: Row(
-                children: [
-                  Expanded(
-                      child: TextField(
-                    decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Colors.white,
-                        prefixIcon: Icon(
-                          CupertinoIcons.search,
-                          color: grayColor,
-                        ),
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide.none,
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(64),
-                          ),
-                        ),
-                        hintText: "Search products",
-                        hintStyle: TextStyle(
-                          color: grayColor,
-                          fontSize: 12,
-                        )),
-                  )),
-                  SizedBox(
-                    width: 8,
-                  ),
-                  //notificação
-                  Stack(
-                    children: [
-                      SizedBox(
-                        width: 46,
-                        height: 46,
-                        child: CircleAvatar(
-                          backgroundColor: Colors.white,
-                          child: Icon(
-                            CupertinoIcons.bell,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              //widgt pesquisa
+              SizedBox(
+                height: 46,
+                child: Row(
+                  children: [
+                    Expanded(
+                        child: TextField(
+                      decoration: InputDecoration(
+                          filled: true,
+                          fillColor: Colors.white,
+                          prefixIcon: Icon(
+                            CupertinoIcons.search,
                             color: grayColor,
                           ),
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(64),
+                            ),
+                          ),
+                          hintText: "Search products",
+                          hintStyle: TextStyle(
+                            color: grayColor,
+                            fontSize: 12,
+                          )),
+                    )),
+                    SizedBox(
+                      width: 8,
+                    ),
+                    //notificação
+                    Stack(
+                      children: [
+                        SizedBox(
+                          width: 46,
+                          height: 46,
+                          child: CircleAvatar(
+                            backgroundColor: Colors.white,
+                            child: Icon(
+                              CupertinoIcons.bell,
+                              color: grayColor,
+                            ),
+                          ),
                         ),
-                      ),
-                      Positioned(
-                        top: -13,
-                        right: 0,
-                        child: SizedBox(
-                            width: 10,
-                            child: CircleAvatar(
-                              backgroundColor: Color(0xFFFF5500),
-                            )),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 32,
-            ),
-
-            //widget display
-            Container(
-              width: double.infinity,
-              height: 149,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topRight,
-                  end: Alignment.bottomLeft,
-                  colors: [
-                    Color(0xFF4D0A8E),
-                    Color(0xFFCE048C),
+                        Positioned(
+                          top: -13,
+                          right: 0,
+                          child: SizedBox(
+                              width: 10,
+                              child: CircleAvatar(
+                                backgroundColor: Color(0xFFFF5500),
+                              )),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
-                borderRadius: BorderRadius.all(Radius.circular(26)),
               ),
-              child: Stack(clipBehavior: Clip.none, children: [
-                Padding(
-                  padding: EdgeInsets.only(top: 19, left: 24),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      CyberLinio(
-                        fontSize: 26,
-                      ),
-                      SizedBox(height: 48, child: FittedBox(child: Desconto())),
-                      Container(
-                        padding:
-                            EdgeInsets.symmetric(vertical: 2, horizontal: 4),
-                        height: 14,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.all(Radius.circular(42)),
-                        ),
-                        child: Text(
-                          "FREE SHIPPING",
-                          style: TextStyle(fontSize: 8, color: orangeColor),
-                        ),
-                      )
+              SizedBox(
+                height: 32,
+              ),
+
+              //widget display
+              Container(
+                width: double.infinity,
+                height: 149,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topRight,
+                    end: Alignment.bottomLeft,
+                    colors: [
+                      Color(0xFF4D0A8E),
+                      Color(0xFFCE048C),
                     ],
                   ),
+                  borderRadius: BorderRadius.all(Radius.circular(26)),
                 ),
-                Positioned(
-                  right: 0,
-                  top: -30,
-                  child: Image.asset(
-                    "imagens/display.png",
-                    height: 210,
+                child: Stack(clipBehavior: Clip.none, children: [
+                  Padding(
+                    padding: EdgeInsets.only(top: 19, left: 24),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        CyberLinio(
+                          fontSize: 26,
+                        ),
+                        SizedBox(
+                            height: 48, child: FittedBox(child: Desconto())),
+                        Container(
+                          padding:
+                              EdgeInsets.symmetric(vertical: 2, horizontal: 4),
+                          height: 14,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.all(Radius.circular(42)),
+                          ),
+                          child: Text(
+                            "FREE SHIPPING",
+                            style: TextStyle(fontSize: 8, color: orangeColor),
+                          ),
+                        )
+                      ],
+                    ),
                   ),
-                )
-              ]),
-            ),
-
-            Padding(
-              padding: const EdgeInsets.only(left: 80),
-              child: Text(
-                "*Valid from 27/03 to 01/04 2022. Min stock: 1 unit",
-                style: TextStyle(fontSize: 9, color: Color(0xff696969)),
+                  Positioned(
+                    right: 0,
+                    top: -30,
+                    child: Image.asset(
+                      "imagens/display.png",
+                      height: 210,
+                    ),
+                  )
+                ]),
               ),
-            ),
 
-            //widget categorias
-            SizedBox(
-              height: 23,
-            ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
+              Padding(
+                padding: const EdgeInsets.only(left: 80),
+                child: Text(
+                  "*Valid from 27/03 to 01/04 2022. Min stock: 1 unit",
+                  style: TextStyle(fontSize: 9, color: Color(0xff696969)),
+                ),
+              ),
+
+              //widget categorias
+              SizedBox(
+                height: 23,
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    Chip(
+                      label: Text("Technology"),
+                      labelStyle: TextStyle(color: chipTextColor),
+                      backgroundColor: Colors.white,
+                      side: BorderSide(
+                        color: grayColor.withOpacity(0.5),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 16,
+                    ),
+                    Chip(
+                      label: Text("Fashion"),
+                      labelStyle: TextStyle(color: chipTextColor),
+                      backgroundColor: Colors.white,
+                      side: BorderSide(
+                        color: grayColor.withOpacity(0.5),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 16,
+                    ),
+                    Chip(
+                      label: Text("Sports"),
+                      labelStyle: TextStyle(color: chipTextColor),
+                      backgroundColor: Colors.white,
+                      side: BorderSide(
+                        color: grayColor.withOpacity(0.5),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 16,
+                    ),
+                    Chip(
+                      label: Text("Home"),
+                      labelStyle: TextStyle(color: chipTextColor),
+                      backgroundColor: Colors.white,
+                      side: BorderSide(
+                        color: grayColor.withOpacity(0.5),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 16,
+                    ),
+                    Chip(
+                      label: Text("Technology"),
+                      labelStyle: TextStyle(color: chipTextColor),
+                      backgroundColor: Colors.white,
+                      side: BorderSide(
+                        color: grayColor.withOpacity(0.5),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 16,
+                    ),
+                    Chip(
+                      label: Text("Fashion"),
+                      labelStyle: TextStyle(color: chipTextColor),
+                      backgroundColor: Colors.white,
+                      side: BorderSide(
+                        color: grayColor.withOpacity(0.5),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 16,
+                    ),
+                    Chip(
+                      label: Text("Sports"),
+                      labelStyle: TextStyle(color: chipTextColor),
+                      backgroundColor: Colors.white,
+                      side: BorderSide(
+                        color: grayColor.withOpacity(0.5),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 16,
+                    ),
+                    Chip(
+                      label: Text("Home"),
+                      labelStyle: TextStyle(color: chipTextColor),
+                      backgroundColor: Colors.white,
+                      side: BorderSide(
+                        color: grayColor.withOpacity(0.5),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Chip(
-                    label: Text("Technology"),
-                    labelStyle: TextStyle(color: chipTextColor),
-                    backgroundColor: Colors.white,
-                    side: BorderSide(
-                      color: grayColor.withOpacity(0.5),
+                  Text(
+                    "Hot Sales",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
-                  SizedBox(
-                    width: 16,
-                  ),
-                  Chip(
-                    label: Text("Fashion"),
-                    labelStyle: TextStyle(color: chipTextColor),
-                    backgroundColor: Colors.white,
-                    side: BorderSide(
-                      color: grayColor.withOpacity(0.5),
+                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                    Container(
+                      height: 6,
+                      width: 24,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(44),
+                          color: Color(0xFFFF5500)),
                     ),
-                  ),
-                  SizedBox(
-                    width: 16,
-                  ),
-                  Chip(
-                    label: Text("Sports"),
-                    labelStyle: TextStyle(color: chipTextColor),
-                    backgroundColor: Colors.white,
-                    side: BorderSide(
-                      color: grayColor.withOpacity(0.5),
+                    SizedBox(
+                      width: 6,
                     ),
-                  ),
-                  SizedBox(
-                    width: 16,
-                  ),
-                  Chip(
-                    label: Text("Home"),
-                    labelStyle: TextStyle(color: chipTextColor),
-                    backgroundColor: Colors.white,
-                    side: BorderSide(
-                      color: grayColor.withOpacity(0.5),
+                    SizedBox(
+                      height: 6,
+                      width: 6,
+                      child: CircleAvatar(
+                        backgroundColor: Color(0xFFCFCFCF),
+                      ),
                     ),
-                  ),
-                  SizedBox(
-                    width: 16,
-                  ),
-                  Chip(
-                    label: Text("Technology"),
-                    labelStyle: TextStyle(color: chipTextColor),
-                    backgroundColor: Colors.white,
-                    side: BorderSide(
-                      color: grayColor.withOpacity(0.5),
+                    SizedBox(
+                      width: 6,
                     ),
-                  ),
-                  SizedBox(
-                    width: 16,
-                  ),
-                  Chip(
-                    label: Text("Fashion"),
-                    labelStyle: TextStyle(color: chipTextColor),
-                    backgroundColor: Colors.white,
-                    side: BorderSide(
-                      color: grayColor.withOpacity(0.5),
+                    SizedBox(
+                      height: 6,
+                      width: 6,
+                      child: CircleAvatar(
+                        backgroundColor: Color(0xFFCFCFCF),
+                      ),
                     ),
-                  ),
-                  SizedBox(
-                    width: 16,
-                  ),
-                  Chip(
-                    label: Text("Sports"),
-                    labelStyle: TextStyle(color: chipTextColor),
-                    backgroundColor: Colors.white,
-                    side: BorderSide(
-                      color: grayColor.withOpacity(0.5),
+                    SizedBox(
+                      width: 6,
                     ),
-                  ),
-                  SizedBox(
-                    width: 16,
-                  ),
-                  Chip(
-                    label: Text("Home"),
-                    labelStyle: TextStyle(color: chipTextColor),
-                    backgroundColor: Colors.white,
-                    side: BorderSide(
-                      color: grayColor.withOpacity(0.5),
+                    SizedBox(
+                      height: 6,
+                      width: 6,
+                      child: CircleAvatar(
+                        backgroundColor: Color(0xFFCFCFCF),
+                      ),
                     ),
-                  ),
+                  ])
                 ],
               ),
-            ),
-          ],
+              SizedBox(
+                height: 16,
+              ),
+              //card de produtos
+              Container(
+                width: 128,
+                height: 148,
+                decoration: BoxDecoration(
+                  color: grayColor.withOpacity(0.2),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      width: 70,
+                      height: 16,
+                      child: Container(
+                        padding: EdgeInsets.all(3),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(50)),
+                        child: FittedBox(
+                          child: Text(
+                            "Free Shipping",
+                            style: TextStyle(
+                              color: orangeColor,
+                            ),
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
 
