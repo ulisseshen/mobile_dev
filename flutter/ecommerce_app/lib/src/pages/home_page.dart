@@ -309,32 +309,45 @@ class _HomePageState extends State<HomePage> {
               ),
               //card de produtos
               Container(
+                padding: EdgeInsets.symmetric(
+                  vertical: 6,
+                  horizontal: 7,
+                ),
                 width: 128,
-                height: 148,
+                //height: 148,
                 decoration: BoxDecoration(
                   color: grayColor.withOpacity(0.2),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(
-                      width: 70,
-                      height: 16,
-                      child: Container(
-                        padding: EdgeInsets.all(3),
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(50)),
-                        child: FittedBox(
-                          child: Text(
-                            "Free Shipping",
-                            style: TextStyle(
-                              color: orangeColor,
-                            ),
-                          ),
+                    Container(
+                      padding: EdgeInsets.symmetric(
+                        vertical: 3,
+                        horizontal: 6,
+                      ),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(50)),
+                      child: Text(
+                        "Free Shipping",
+                        style: TextStyle(
+                          fontSize: 10,
+                          color: orangeColor,
                         ),
                       ),
-                    )
+                    ),
+                    SizedBox(
+                      height: 6,
+                    ),
+                    Image.asset("imagens/note-png.png"),
+                    Text("Macbook Air M1"),
+                    Text(
+                      "\$ 299 ",
+                      style:
+                          TextStyle(fontSize: 12, fontWeight: FontWeight.w700),
+                    ),
                   ],
                 ),
               )
