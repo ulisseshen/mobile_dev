@@ -22,6 +22,65 @@ class _HomePageState extends State<HomePage> {
 
   int _currentIndex = 0;
 
+  Widget buildSearch(BuildContext context) {
+    return SizedBox(
+      height: 46,
+      child: Row(
+        children: [
+          Expanded(
+              child: TextField(
+            decoration: InputDecoration(
+                filled: true,
+                fillColor: Colors.white,
+                prefixIcon: Icon(
+                  CupertinoIcons.search,
+                  color: grayColor,
+                ),
+                border: OutlineInputBorder(
+                  borderSide: BorderSide.none,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(64),
+                  ),
+                ),
+                hintText: "Search products",
+                hintStyle: TextStyle(
+                  color: grayColor,
+                  fontSize: 12,
+                )),
+          )),
+          SizedBox(
+            width: 8,
+          ),
+          //notificação
+          Stack(
+            children: [
+              SizedBox(
+                width: 46,
+                height: 46,
+                child: CircleAvatar(
+                  backgroundColor: Colors.white,
+                  child: Icon(
+                    CupertinoIcons.bell,
+                    color: grayColor,
+                  ),
+                ),
+              ),
+              Positioned(
+                top: -13,
+                right: 0,
+                child: SizedBox(
+                    width: 10,
+                    child: CircleAvatar(
+                      backgroundColor: Color(0xFFFF5500),
+                    )),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,67 +91,10 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              //widgt pesquisa
-              SizedBox(
-                height: 46,
-                child: Row(
-                  children: [
-                    Expanded(
-                        child: TextField(
-                      decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.white,
-                          prefixIcon: Icon(
-                            CupertinoIcons.search,
-                            color: grayColor,
-                          ),
-                          border: OutlineInputBorder(
-                            borderSide: BorderSide.none,
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(64),
-                            ),
-                          ),
-                          hintText: "Search products",
-                          hintStyle: TextStyle(
-                            color: grayColor,
-                            fontSize: 12,
-                          )),
-                    )),
-                    SizedBox(
-                      width: 8,
-                    ),
-                    //notificação
-                    Stack(
-                      children: [
-                        SizedBox(
-                          width: 46,
-                          height: 46,
-                          child: CircleAvatar(
-                            backgroundColor: Colors.white,
-                            child: Icon(
-                              CupertinoIcons.bell,
-                              color: grayColor,
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          top: -13,
-                          right: 0,
-                          child: SizedBox(
-                              width: 10,
-                              child: CircleAvatar(
-                                backgroundColor: Color(0xFFFF5500),
-                              )),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
+              buildSearch(context),
               SizedBox(
                 height: 32,
               ),
-
               //widget display
               Container(
                 width: double.infinity,
@@ -312,39 +314,39 @@ class _HomePageState extends State<HomePage> {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-              Container(
-                padding: EdgeInsets.symmetric(
-                  vertical: 6,
-                  horizontal: 7,
-                ),
-                width: 128,
-                //height: 148,
-                decoration: BoxDecoration(
-                  color: grayColor.withOpacity(0.2),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
                     Container(
                       padding: EdgeInsets.symmetric(
-                        vertical: 3,
-                        horizontal: 6,
+                        vertical: 6,
+                        horizontal: 7,
                       ),
+                      width: 128,
+                      //height: 148,
                       decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(50)),
-                      child: Text(
-                        "Free Shipping",
-                        style: TextStyle(
-                          fontSize: 10,
-                          color: orangeColor,
-                        ),
+                        color: grayColor.withOpacity(0.2),
+                        borderRadius: BorderRadius.circular(10),
                       ),
-                    ),
-                    SizedBox(
-                      height: 6,
-                    ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                              vertical: 3,
+                              horizontal: 6,
+                            ),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(50)),
+                            child: Text(
+                              "Free Shipping",
+                              style: TextStyle(
+                                fontSize: 10,
+                                color: orangeColor,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 6,
+                          ),
                           Image.asset(
                             "imagens/note-png.png",
                             height: 100,
@@ -352,9 +354,9 @@ class _HomePageState extends State<HomePage> {
                           SizedBox(
                             height: 6,
                           ),
-                    Text("Macbook Air M1"),
-                    Text(
-                      "\$ 299 ",
+                          Text("Macbook Air M1"),
+                          Text(
+                            "\$ 299 ",
                             style: TextStyle(
                                 fontSize: 16, fontWeight: FontWeight.w700),
                           ),
@@ -472,7 +474,6 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-
       bottomNavigationBar: Container(
         height: 110,
         decoration: BoxDecoration(
@@ -617,87 +618,6 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-
-      // bottomNavigationBar: SizedBox(
-      //   height: 110,
-      //   child: ClipRRect(
-      //     borderRadius: BorderRadius.only(
-      //         topLeft: Radius.circular(40), topRight: Radius.circular(40)),
-      //     child: BottomNavigationBar(
-      //         selectedItemColor: orangeColor,
-      //         onTap: (int index) {
-      //           setState(() {
-      //             _currentIndex = index;
-      //           });
-      //         },
-      //         currentIndex: _currentIndex,
-      //         showSelectedLabels: true,
-      //         showUnselectedLabels: false,
-      //         unselectedIconTheme: IconThemeData(color: grayColor),
-      //         items: [
-      //           BottomNavigationBarItem(
-      //               backgroundColor: Colors.white,
-      //               icon: Icon(
-      //                 Icons.home,
-      //               ),
-      //               activeIcon: Container(
-      //                 padding:
-      //                     EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-      //                 decoration: BoxDecoration(
-      //                     color: orangeColor.withOpacity(0.1),
-      //                     borderRadius: BorderRadius.all(Radius.circular(50))),
-      //                 child: Icon(
-      //                   Icons.home,
-      //                   color: orangeColor,
-      //                 ),
-      //               ),
-      //               label: "Home"),
-      //           BottomNavigationBarItem(
-      //               icon: Icon(Icons.shopping_bag),
-      //               activeIcon: Container(
-      //                 padding:
-      //                     EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-      //                 decoration: BoxDecoration(
-      //                     color: orangeColor.withOpacity(0.1),
-      //                     borderRadius: BorderRadius.all(Radius.circular(50))),
-      //                 child: Icon(
-      //                   Icons.shopping_bag,
-      //                   color: orangeColor,
-      //                 ),
-      //               ),
-      //               label: "Bag"),
-      //           BottomNavigationBarItem(
-      //               icon: Icon(Icons.favorite),
-      //               activeIcon: Container(
-      //                 padding:
-      //                     EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-      //                 decoration: BoxDecoration(
-      //                     color: orangeColor.withOpacity(0.1),
-      //                     borderRadius: BorderRadius.all(Radius.circular(50))),
-      //                 child: Icon(
-      //                   Icons.favorite,
-      //                   color: orangeColor,
-      //                 ),
-      //               ),
-      //               label: "Favorite"),
-      //           BottomNavigationBarItem(
-      //               icon: Icon(Icons.person),
-      //               activeIcon: Container(
-      //                 margin: EdgeInsets.only(right: 8),
-      //                 padding:
-      //                     EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-      //                 decoration: BoxDecoration(
-      //                     color: orangeColor.withOpacity(0.1),
-      //                     borderRadius: BorderRadius.all(Radius.circular(50))),
-      //                 child: Icon(
-      //                   Icons.person,
-      //                   color: orangeColor,
-      //                 ),
-      //               ),
-      //               label: "User")
-      //         ]),
-      //   ),
-      // ),
     );
   }
 }
