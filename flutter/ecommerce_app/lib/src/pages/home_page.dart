@@ -308,6 +308,10 @@ class _HomePageState extends State<HomePage> {
                 height: 16,
               ),
               //card de produtos
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
               Container(
                 padding: EdgeInsets.symmetric(
                   vertical: 6,
@@ -341,12 +345,125 @@ class _HomePageState extends State<HomePage> {
                     SizedBox(
                       height: 6,
                     ),
-                    Image.asset("imagens/note-png.png"),
+                          Image.asset(
+                            "imagens/note-png.png",
+                            height: 100,
+                          ),
+                          SizedBox(
+                            height: 6,
+                          ),
                     Text("Macbook Air M1"),
                     Text(
                       "\$ 299 ",
-                      style:
-                          TextStyle(fontSize: 12, fontWeight: FontWeight.w700),
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.w700),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      width: 12,
+                    ),
+                    Container(
+                      padding: EdgeInsets.symmetric(
+                        vertical: 6,
+                        horizontal: 7,
+                      ),
+                      width: 128,
+                      //height: 148,
+                      decoration: BoxDecoration(
+                        color: grayColor.withOpacity(0.2),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                              vertical: 3,
+                              horizontal: 6,
+                            ),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(50)),
+                            child: Text(
+                              "Free Shipping",
+                              style: TextStyle(
+                                fontSize: 10,
+                                color: orangeColor,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 6,
+                          ),
+                          Image.asset(
+                            "imagens/headphone.png",
+                            height: 100,
+                          ),
+                          SizedBox(
+                            height: 6,
+                          ),
+                          Text("Sony WH/1000XM4"),
+                          Text(
+                            "\$ 499 ",
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.w700),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      width: 12,
+                    ),
+                    Container(
+                      padding: EdgeInsets.symmetric(
+                        vertical: 6,
+                        horizontal: 7,
+                      ),
+                      width: 128,
+                      //height: 148,
+                      decoration: BoxDecoration(
+                        color: grayColor.withOpacity(0.2),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                              vertical: 3,
+                              horizontal: 6,
+                            ),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(50)),
+                            child: Text(
+                              "Free Shipping",
+                              style: TextStyle(
+                                fontSize: 10,
+                                color: orangeColor,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 6,
+                          ),
+                          Image.asset(
+                            "imagens/fone-pequeno.png",
+                            height: 100,
+                          ),
+                          SizedBox(
+                            height: 6,
+                          ),
+                          Text("FreeBuds Huawei"),
+                          Text(
+                            "\$ 149 ",
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.w700),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
