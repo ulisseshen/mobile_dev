@@ -7,7 +7,7 @@ import '../widgets/cyber_linio.dart';
 import '../widgets/desconto.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({super.key});
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -32,27 +32,23 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              buildSearch(),
+              _Search(grayColor: grayColor),
               SizedBox(
                 height: 32,
               ),
-              //widget display
-              buildDisplay(),
-
-              //widget categorias
+              _Display(orangeColor: orangeColor),
               SizedBox(
                 height: 23,
               ),
-              buildCategorias(),
+              _Categorias(chipTextColor: chipTextColor, grayColor: grayColor),
               SizedBox(
                 height: 20,
               ),
-              buildTitleHotSales(),
+              _TitleHotSales(),
               SizedBox(
                 height: 16,
               ),
-              //card de produtos
-              buildCardDeProdutos()
+              _CardDeProdutos(grayColor: grayColor, orangeColor: orangeColor)
             ],
           ),
         ),
@@ -203,8 +199,20 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+}
 
-  Widget buildCardDeProdutos() {
+class _CardDeProdutos extends StatelessWidget {
+  const _CardDeProdutos({
+    super.key,
+    required this.grayColor,
+    required this.orangeColor,
+  });
+
+  final Color grayColor;
+  final Color orangeColor;
+
+  @override
+  Widget build(BuildContext context) {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
@@ -363,8 +371,15 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+}
 
-  Widget buildTitleHotSales() {
+class _TitleHotSales extends StatelessWidget {
+  const _TitleHotSales({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -417,8 +432,20 @@ class _HomePageState extends State<HomePage> {
       ],
     );
   }
+}
 
-  Widget buildCategorias() {
+class _Categorias extends StatelessWidget {
+  const _Categorias({
+    super.key,
+    required this.chipTextColor,
+    required this.grayColor,
+  });
+
+  final Color chipTextColor;
+  final Color grayColor;
+
+  @override
+  Widget build(BuildContext context) {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
@@ -512,67 +539,18 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+}
 
-  Widget buildSearch() {
-    return SizedBox(
-      height: 46,
-      child: Row(
-        children: [
-          Expanded(
-              child: TextField(
-            decoration: InputDecoration(
-                filled: true,
-                fillColor: Colors.white,
-                prefixIcon: Icon(
-                  CupertinoIcons.search,
-                  color: grayColor,
-                ),
-                border: OutlineInputBorder(
-                  borderSide: BorderSide.none,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(64),
-                  ),
-                ),
-                hintText: "Search products",
-                hintStyle: TextStyle(
-                  color: grayColor,
-                  fontSize: 12,
-                )),
-          )),
-          SizedBox(
-            width: 8,
-          ),
-          //notificação
-          Stack(
-            children: [
-              SizedBox(
-                width: 46,
-                height: 46,
-                child: CircleAvatar(
-                  backgroundColor: Colors.white,
-                  child: Icon(
-                    CupertinoIcons.bell,
-                    color: grayColor,
-                  ),
-                ),
-              ),
-              Positioned(
-                top: -13,
-                right: 0,
-                child: SizedBox(
-                    width: 10,
-                    child: CircleAvatar(
-                      backgroundColor: Color(0xFFFF5500),
-                    )),
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
+class _Display extends StatelessWidget {
+  const _Display({
+    super.key,
+    required this.orangeColor,
+  });
 
-  Widget buildDisplay() {
+  final Color orangeColor;
+
+  @override
+  Widget build(BuildContext context) {
     return Column(
       children: [
         Container(
@@ -629,6 +607,75 @@ class _HomePageState extends State<HomePage> {
           style: TextStyle(fontSize: 9, color: Color(0xff696969)),
         ),
       ],
+    );
+  }
+}
+
+class _Search extends StatelessWidget {
+  const _Search({
+    super.key,
+    required this.grayColor,
+  });
+
+  final Color grayColor;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 46,
+      child: Row(
+        children: [
+          Expanded(
+              child: TextField(
+            decoration: InputDecoration(
+                filled: true,
+                fillColor: Colors.white,
+                prefixIcon: Icon(
+                  CupertinoIcons.search,
+                  color: grayColor,
+                ),
+                border: OutlineInputBorder(
+                  borderSide: BorderSide.none,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(64),
+                  ),
+                ),
+                hintText: "Search products",
+                hintStyle: TextStyle(
+                  color: grayColor,
+                  fontSize: 12,
+                )),
+          )),
+          SizedBox(
+            width: 8,
+          ),
+          //notificação
+          Stack(
+            children: [
+              SizedBox(
+                width: 46,
+                height: 46,
+                child: CircleAvatar(
+                  backgroundColor: Colors.white,
+                  child: Icon(
+                    CupertinoIcons.bell,
+                    color: grayColor,
+                  ),
+                ),
+              ),
+              Positioned(
+                top: -13,
+                right: 0,
+                child: SizedBox(
+                    width: 10,
+                    child: CircleAvatar(
+                      backgroundColor: Color(0xFFFF5500),
+                    )),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
