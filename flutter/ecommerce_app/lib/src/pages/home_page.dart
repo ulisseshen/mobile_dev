@@ -20,8 +20,6 @@ class _HomePageState extends State<HomePage> {
 
   final Color orangeColor = const Color(0xFFFF5500);
 
-  int _currentIndex = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,11 +51,31 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      bottomNavigationBar: buildNavigationBar(),
+      bottomNavigationBar: BottomNavigationBar(
+        orangeColor: orangeColor,
+        grayColor: grayColor,
+      ),
     );
   }
+}
 
-  Widget buildNavigationBar() {
+class BottomNavigationBar extends StatefulWidget {
+  const BottomNavigationBar(
+      {super.key, required this.orangeColor, required this.grayColor});
+
+  final Color orangeColor;
+
+  final Color grayColor;
+
+  @override
+  State<BottomNavigationBar> createState() => _BottomNavigationBarState();
+}
+
+class _BottomNavigationBarState extends State<BottomNavigationBar> {
+  int _currentIndex = 0;
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
       height: 110,
       decoration: BoxDecoration(
@@ -76,17 +94,17 @@ class _HomePageState extends State<HomePage> {
                     onPressed: () {},
                     icon: Icon(
                       Icons.home,
-                      color: orangeColor,
+                      color: widget.orangeColor,
                     ),
                     label: Text(
                       "Home",
                       style: TextStyle(
-                        color: orangeColor,
+                        color: widget.orangeColor,
                       ),
                     ),
                     style: ElevatedButton.styleFrom(
                       elevation: 0,
-                      backgroundColor: orangeColor.withOpacity(0.1),
+                      backgroundColor: widget.orangeColor.withOpacity(0.1),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(50))),
                     ),
@@ -99,7 +117,7 @@ class _HomePageState extends State<HomePage> {
                     },
                     icon: Icon(
                       Icons.home,
-                      color: grayColor,
+                      color: widget.grayColor,
                     )),
             //index 1
             _currentIndex == 1
@@ -107,17 +125,17 @@ class _HomePageState extends State<HomePage> {
                     onPressed: () {},
                     icon: Icon(
                       Icons.shopping_bag,
-                      color: orangeColor,
+                      color: widget.orangeColor,
                     ),
                     label: Text(
                       "Bag",
                       style: TextStyle(
-                        color: orangeColor,
+                        color: widget.orangeColor,
                       ),
                     ),
                     style: ElevatedButton.styleFrom(
                       elevation: 0,
-                      backgroundColor: orangeColor.withOpacity(0.1),
+                      backgroundColor: widget.orangeColor.withOpacity(0.1),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(50))),
                     ),
@@ -130,7 +148,7 @@ class _HomePageState extends State<HomePage> {
                     },
                     icon: Icon(
                       Icons.shopping_bag,
-                      color: grayColor,
+                      color: widget.grayColor,
                     )),
             //index 2
             _currentIndex == 2
@@ -138,17 +156,17 @@ class _HomePageState extends State<HomePage> {
                     onPressed: () {},
                     icon: Icon(
                       Icons.favorite,
-                      color: orangeColor,
+                      color: widget.orangeColor,
                     ),
                     label: Text(
                       "Favorite",
                       style: TextStyle(
-                        color: orangeColor,
+                        color: widget.orangeColor,
                       ),
                     ),
                     style: ElevatedButton.styleFrom(
                       elevation: 0,
-                      backgroundColor: orangeColor.withOpacity(0.1),
+                      backgroundColor: widget.orangeColor.withOpacity(0.1),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(50))),
                     ),
@@ -161,7 +179,7 @@ class _HomePageState extends State<HomePage> {
                     },
                     icon: Icon(
                       Icons.favorite,
-                      color: grayColor,
+                      color: widget.grayColor,
                     )),
             //index 3
             _currentIndex == 3
@@ -169,17 +187,17 @@ class _HomePageState extends State<HomePage> {
                     onPressed: () {},
                     icon: Icon(
                       Icons.person,
-                      color: orangeColor,
+                      color: widget.orangeColor,
                     ),
                     label: Text(
                       "User",
                       style: TextStyle(
-                        color: orangeColor,
+                        color: widget.orangeColor,
                       ),
                     ),
                     style: ElevatedButton.styleFrom(
                       elevation: 0,
-                      backgroundColor: orangeColor.withOpacity(0.1),
+                      backgroundColor: widget.orangeColor.withOpacity(0.1),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(50))),
                     ),
@@ -192,7 +210,7 @@ class _HomePageState extends State<HomePage> {
                     },
                     icon: Icon(
                       Icons.person,
-                      color: grayColor,
+                      color: widget.grayColor,
                     ))
           ],
         ),
