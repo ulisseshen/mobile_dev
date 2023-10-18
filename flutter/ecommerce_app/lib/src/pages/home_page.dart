@@ -47,7 +47,45 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(
                   height: 16,
                 ),
-                _CardDeProdutos(grayColor: grayColor, orangeColor: orangeColor)
+                _CardDeProdutos(grayColor: grayColor, orangeColor: orangeColor),
+                SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  "Recently viewed",
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  height: 179,
+                  width: 169,
+                  decoration: BoxDecoration(
+                      color: Color(0xFFCF0090).withOpacity(0.2),
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Stack(
+                    children: [
+                      Positioned(
+                        top: 0,
+                        right: 0,
+                        child: Padding(
+                          padding: EdgeInsets.all(10.0),
+                          child: CircleAvatar(
+                            backgroundColor: Colors.white,
+                            child: Icon(
+                              Icons.favorite_border_outlined,
+                              color: orangeColor.withOpacity(0.5),
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
