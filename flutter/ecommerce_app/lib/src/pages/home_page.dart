@@ -326,10 +326,17 @@ class _CardDeProdutos extends StatelessWidget {
                 SizedBox(
                   height: 6,
                 ),
-                Text("Sony WH/1000XM4"),
+                Text(
+                  "Sony WH/1000XM4",
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 1,
+                ),
                 Text(
                   "\$ 499 ",
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w700,
+                  ),
                 ),
               ],
             ),
