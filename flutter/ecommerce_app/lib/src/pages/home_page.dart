@@ -24,30 +24,32 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFF7F6F4),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
+      body: SafeArea(
         child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _Search(grayColor: grayColor),
-              SizedBox(
-                height: 32,
-              ),
-              _Display(orangeColor: orangeColor),
-              SizedBox(
-                height: 23,
-              ),
-              _Categorias(chipTextColor: chipTextColor, grayColor: grayColor),
-              SizedBox(
-                height: 20,
-              ),
-              _TitleHotSales(),
-              SizedBox(
-                height: 16,
-              ),
-              _CardDeProdutos(grayColor: grayColor, orangeColor: orangeColor)
-            ],
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _Search(grayColor: grayColor),
+                SizedBox(
+                  height: 32,
+                ),
+                _Display(orangeColor: orangeColor),
+                SizedBox(
+                  height: 23,
+                ),
+                _Categorias(chipTextColor: chipTextColor, grayColor: grayColor),
+                SizedBox(
+                  height: 20,
+                ),
+                _TitleHotSales(),
+                SizedBox(
+                  height: 16,
+                ),
+                _CardDeProdutos(grayColor: grayColor, orangeColor: orangeColor)
+              ],
+            ),
           ),
         ),
       ),
