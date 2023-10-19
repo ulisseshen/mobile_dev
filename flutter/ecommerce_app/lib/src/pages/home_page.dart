@@ -61,28 +61,115 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(
                   height: 20,
                 ),
-                Container(
-                  height: 179,
-                  width: 169,
-                  decoration: BoxDecoration(
-                      color: Color(0xFFCF0090).withOpacity(0.2),
-                      borderRadius: BorderRadius.circular(10)),
-                  child: Stack(
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
                     children: [
-                      Positioned(
-                        top: 0,
-                        right: 0,
-                        child: Padding(
-                          padding: EdgeInsets.all(10.0),
-                          child: CircleAvatar(
-                            backgroundColor: Colors.white,
-                            child: Icon(
-                              Icons.favorite_border_outlined,
-                              color: orangeColor.withOpacity(0.5),
+                      Container(
+                        height: 189,
+                        width: 179,
+                        decoration: BoxDecoration(
+                            color: Color(0xFFCF0090).withOpacity(0.2),
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            Positioned(
+                              top: 0,
+                              right: 0,
+                              child: Padding(
+                                padding: EdgeInsets.all(10.0),
+                                child: SizedBox(
+                                  height: 30,
+                                  child: CircleAvatar(
+                                    backgroundColor: Colors.white,
+                                    child: Icon(
+                                      Icons.favorite_border_outlined,
+                                      size: 18,
+                                      color: orangeColor.withOpacity(0.5),
+                                    ),
+                                  ),
+                                ),
+                              ),
                             ),
-                          ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  'imagens/notebookpc.png',
+                                  height: 80,
+                                ),
+                                Text(
+                                  'Huawei Matebook X 13',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 14),
+                                ),
+                                Text(
+                                  '\$ 20,999 ',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16),
+                                ),
+                              ],
+                            ),
+                          ],
                         ),
-                      )
+                      ),
+                      SizedBox(
+                        width: 16,
+                      ),
+                      Container(
+                        height: 189,
+                        width: 179,
+                        decoration: BoxDecoration(
+                            color: Color(0xF4D0A8E).withOpacity(0.2),
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            Positioned(
+                              top: 0,
+                              right: 0,
+                              child: Padding(
+                                padding: EdgeInsets.all(10.0),
+                                child: SizedBox(
+                                  height: 30,
+                                  child: CircleAvatar(
+                                    backgroundColor: Colors.white,
+                                    child: Icon(
+                                      Icons.favorite_border_outlined,
+                                      size: 18,
+                                      color: orangeColor.withOpacity(0.5),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  'imagens/ecodok.png',
+                                  height: 80,
+                                ),
+                                Text(
+                                  'Alexa Home',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 14),
+                                ),
+                                Text(
+                                  '\$ 999',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),
